@@ -19,11 +19,11 @@ function ContactForm() {
 	async function handleSubmit(event) {
 		event.preventDefault();
 
-		if (validator.validate(contactInfo.email)) {
+		if (validator.validate(contactInfo.emailField)) {
 			let dataBody = JSON.stringify(contactInfo);
 
 			try {
-				const url = `http://localhost:3001`;
+				const url = process.env.REACT_APP_BACKEND;
 				let res = await fetch(url, {
 					method: 'POST',
 					headers: { 'content-type': 'application/json' },
