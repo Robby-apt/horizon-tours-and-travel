@@ -14,18 +14,18 @@ function Navbar() {
 					<p>0748629493</p>
 				</div>
 			</div>
-			<div className="navbar">
+			<nav className="navbar">
 				<a href="/" className="brandName">
 					Horizon Tours and Travel
 				</a>
-				<div className="navlinks">
+				<div className="navLinks">
 					<a href="/">Home</a>
 					<a href="/#popular">Popular destination</a>
 					<a href="/contact">Contact</a>
 					<a href="/login">Login</a>
 					<a href="/booking">Book a tour</a>
 				</div>
-			</div>
+			</nav>
 		</div>
 	);
 }

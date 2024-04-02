@@ -1,0 +1,153 @@
+#contact {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	nav {
+		color: $primary-font-color;
+
+		a {
+			&:last-child {
+				border: $primary-font-color 0.125rem solid;
+				border-radius: 0.3125rem;
+				padding: 0.125rem 0.25rem;
+
+				&:hover {
+					background-color: $primary-font-color;
+					color: $secondary-font-color;
+				}
+			}
+		}
+	}
+}
+
+.contactLinksAndForm {
+	border-radius: 1.25rem;
+	display: flex;
+	filter: drop-shadow(0.625rem 0.625rem 0.25rem rgba(0, 0, 0, 0.25));
+	justify-content: space-between;
+	margin: auto;
+	width: 65vw;
+	min-height: 350px;
+}
+
+.contactMedia {
+	background-color: $primary-bg-color;
+	border-radius: 1.25rem 0 0 1.25rem;
+	color: $secondary-font-color;
+	display: flex;
+	width: 40%;
+
+	.mediaContainer {
+		display: flex;
+		flex-direction: column;
+		// justify-content: space-between;
+		margin: auto;
+		height: 50%;
+
+		p {
+			margin: 0;
+		}
+
+		.phoneAndEmail {
+			display: block;
+			flex-direction: column;
+			font-weight: bold;
+			padding: 0;
+			margin: 1.25rem auto;
+
+			.contactEmail,
+			.contactPhone {
+				display: flex;
+				padding: 0;
+				justify-content: left;
+				width: 100%;
+
+				&:last-child {
+					margin: 1.25rem 0 0;
+				}
+
+				i {
+					font-size: 1rem;
+					margin: auto 1.25rem auto 0;
+				}
+
+				p {
+					font-weight: bold;
+					margin: 0.25rem 0;
+				}
+			}
+		}
+
+		div {
+			display: flex;
+			justify-content: space-around;
+
+			a {
+				color: unset;
+
+				i {
+					font-size: 2.5rem;
+
+					&:hover {
+						font-size: 3rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+.contactForm {
+	background-color: $secondary-font-color;
+	border-radius: 0 1.25rem 1.25rem 0;
+	display: flex;
+	width: 60%;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	margin: 1.25rem auto;
+	width: 60%;
+
+	div {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 1.25rem;
+		width: 100%;
+
+		label {
+			color: $primary-font-color;
+			margin-bottom: 0.625rem;
+		}
+	}
+
+	input {
+		border-top: none;
+		border-right: none;
+		border-bottom: 0.125rem solid $primary-font-color;
+		border-left: none;
+	}
+
+	textarea {
+		border: 0.125rem solid $primary-font-color;
+	}
+
+	button {
+		background: none;
+		border: 0.125rem solid $primary-font-color;
+		border-radius: 1.25rem;
+		color: $primary-font-color;
+		font-weight: bold;
+		margin: auto;
+		padding: 0.3125rem 0.625rem;
+
+		&:hover {
+			background-color: $primary-font-color;
+			border: 0.125rem solid $primary-font-color;
+			color: $secondary-font-color;
+			cursor: pointer;
+		}
+	}
+}

@@ -1,0 +1,22 @@
+#login {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	nav {
+		color: $primary-font-color;
+
+		a {
+			&:last-child {
+				border: $primary-font-color 0.125rem solid;
+				border-radius: 0.3125rem;
+				padding: 0.125rem 0.25rem;
+
+				&:hover {
+					background-color: $primary-font-color;
+					color: $secondary-font-color;
+				}
+			}
+		}
+	}
+}

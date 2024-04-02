@@ -1,0 +1,41 @@
+#home {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.hero {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url(/images/sergey-pesterev-DWXR-nAbxCk-unsplash.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: $secondary-font-color;
+	display: flex;
+	flex-direction: column;
+	height: 75vh;
+}
+
+#heroText {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+
+	h1 {
+		font-size: 4rem;
+		text-align: center;
+	}
+
+	a {
+		border: $secondary-font-color 0.25rem solid;
+		border-radius: 1.25rem;
+		font-size: 2.5rem;
+		margin: 1.25rem auto auto;
+		padding: 0.625rem 1.25rem;
+
+		&:hover {
+			background-color: $secondary-font-color;
+			color: $primary-font-color;
+		}
+	}
+}

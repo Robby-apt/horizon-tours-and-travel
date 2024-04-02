@@ -23,6 +23,92 @@ body {
 	min-height: 100vh !important;
 }
 
+a {
+	color: unset;
+	text-decoration: none;
+}
+
+// Navbar styling
+.navSection {
+	color: $secondary-font-color;
+	display: flex;
+	flex-direction: column;
+
+	.info {
+		background-color: $primary-bg-color;
+		display: flex;
+		justify-content: space-around;
+
+		div {
+			display: flex;
+
+			i {
+				font-size: 1rem;
+				margin: auto 1.25rem auto 0;
+			}
+
+			p {
+				margin: 0.25rem 0;
+			}
+		}
+	}
+
+	nav {
+		color: $secondary-font-color;
+		display: flex;
+		justify-content: space-between;
+		width: 90%;
+
+		margin: 0.25rem auto 0;
+
+		.brandName {
+			font-size: 1.5rem;
+			font-weight: bold;
+		}
+
+		.navLinks {
+			margin: auto 0 auto auto;
+
+			a {
+				font-size: 1.125rem;
+
+				&:not(:first-child) {
+					margin-left: 1.25rem;
+				}
+
+				&:not(:last-child) {
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+
+				&:last-child {
+					border: $secondary-font-color 0.125rem solid;
+					border-radius: 0.3125rem;
+					padding: 0.125rem 0.25rem;
+
+					&:hover {
+						background-color: $secondary-font-color;
+						color: $primary-font-color;
+					}
+				}
+			}
+		}
+	}
+}
+
+footer {
+	background-color: $primary-bg-color;
+	color: $secondary-font-color;
+	display: flex;
+	margin: auto 0 0;
+	width: 100%;
+
+	p {
+		margin: 0.3125rem auto;
+	}
+}
+
 // import styling for other pages
 // home page
 @import './home';

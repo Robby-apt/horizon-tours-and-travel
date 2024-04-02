@@ -10,4 +10,263 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh !important;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+.navSection {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.navSection .info {
+  background-color: #2d3b46;
+  display: flex;
+  justify-content: space-around;
+}
+.navSection .info div {
+  display: flex;
+}
+.navSection .info div i {
+  font-size: 1rem;
+  margin: auto 1.25rem auto 0;
+}
+.navSection .info div p {
+  margin: 0.25rem 0;
+}
+.navSection nav {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0.25rem auto 0;
+}
+.navSection nav .brandName {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.navSection nav .navLinks {
+  margin: auto 0 auto auto;
+}
+.navSection nav .navLinks a {
+  font-size: 1.125rem;
+}
+.navSection nav .navLinks a:not(:first-child) {
+  margin-left: 1.25rem;
+}
+.navSection nav .navLinks a:not(:last-child):hover {
+  text-decoration: underline;
+}
+.navSection nav .navLinks a:last-child {
+  border: #fff 0.125rem solid;
+  border-radius: 0.3125rem;
+  padding: 0.125rem 0.25rem;
+}
+.navSection nav .navLinks a:last-child:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+footer {
+  background-color: #2d3b46;
+  color: #fff;
+  display: flex;
+  margin: auto 0 0;
+  width: 100%;
+}
+footer p {
+  margin: 0.3125rem auto;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/sergey-pesterev-DWXR-nAbxCk-unsplash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+}
+
+#heroText {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+#heroText h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+#heroText a {
+  border: #fff 0.25rem solid;
+  border-radius: 1.25rem;
+  font-size: 2.5rem;
+  margin: 1.25rem auto auto;
+  padding: 0.625rem 1.25rem;
+}
+#heroText a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+#contact nav {
+  color: #000;
+}
+#contact nav a:last-child {
+  border: #000 0.125rem solid;
+  border-radius: 0.3125rem;
+  padding: 0.125rem 0.25rem;
+}
+#contact nav a:last-child:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.contactLinksAndForm {
+  border-radius: 1.25rem;
+  display: flex;
+  filter: drop-shadow(0.625rem 0.625rem 0.25rem rgba(0, 0, 0, 0.25));
+  justify-content: space-between;
+  margin: auto;
+  width: 65vw;
+  min-height: 350px;
+}
+
+.contactMedia {
+  background-color: #2d3b46;
+  border-radius: 1.25rem 0 0 1.25rem;
+  color: #fff;
+  display: flex;
+  width: 40%;
+}
+.contactMedia .mediaContainer {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  height: 50%;
+}
+.contactMedia .mediaContainer p {
+  margin: 0;
+}
+.contactMedia .mediaContainer .phoneAndEmail {
+  display: block;
+  flex-direction: column;
+  font-weight: bold;
+  padding: 0;
+  margin: 1.25rem auto;
+}
+.contactMedia .mediaContainer .phoneAndEmail .contactEmail,
+.contactMedia .mediaContainer .phoneAndEmail .contactPhone {
+  display: flex;
+  padding: 0;
+  justify-content: left;
+  width: 100%;
+}
+.contactMedia .mediaContainer .phoneAndEmail .contactEmail:last-child,
+.contactMedia .mediaContainer .phoneAndEmail .contactPhone:last-child {
+  margin: 1.25rem 0 0;
+}
+.contactMedia .mediaContainer .phoneAndEmail .contactEmail i,
+.contactMedia .mediaContainer .phoneAndEmail .contactPhone i {
+  font-size: 1rem;
+  margin: auto 1.25rem auto 0;
+}
+.contactMedia .mediaContainer .phoneAndEmail .contactEmail p,
+.contactMedia .mediaContainer .phoneAndEmail .contactPhone p {
+  font-weight: bold;
+  margin: 0.25rem 0;
+}
+.contactMedia .mediaContainer div {
+  display: flex;
+  justify-content: space-around;
+}
+.contactMedia .mediaContainer div a {
+  color: unset;
+}
+.contactMedia .mediaContainer div a i {
+  font-size: 2.5rem;
+}
+.contactMedia .mediaContainer div a i:hover {
+  font-size: 3rem;
+}
+
+.contactForm {
+  background-color: #fff;
+  border-radius: 0 1.25rem 1.25rem 0;
+  display: flex;
+  width: 60%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 1.25rem auto;
+  width: 60%;
+}
+form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+form div label {
+  color: #000;
+  margin-bottom: 0.625rem;
+}
+form input {
+  border-top: none;
+  border-right: none;
+  border-bottom: 0.125rem solid #000;
+  border-left: none;
+}
+form textarea {
+  border: 0.125rem solid #000;
+}
+form button {
+  background: none;
+  border: 0.125rem solid #000;
+  border-radius: 1.25rem;
+  color: #000;
+  font-weight: bold;
+  margin: auto;
+  padding: 0.3125rem 0.625rem;
+}
+form button:hover {
+  background-color: #000;
+  border: 0.125rem solid #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#login {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+#login nav {
+  color: #000;
+}
+#login nav a:last-child {
+  border: #000 0.125rem solid;
+  border-radius: 0.3125rem;
+  padding: 0.125rem 0.25rem;
+}
+#login nav a:last-child:hover {
+  background-color: #000;
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */

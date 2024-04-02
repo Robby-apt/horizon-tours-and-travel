@@ -2,6 +2,9 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/home-components/Hero';
 import Popular from '../components/home-components/Popular';
+import Footer from '../components/Footer';
+
+
 function Home() {
 	return (
 		<div id="home">
@@ -10,6 +13,7 @@ function Home() {
 				<Hero />
 			</div>
 			<Popular />
+            <Footer />
 		</div>
 	);
 }
