@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Hero() {
 	return (
@@ -8,7 +9,7 @@ function Hero() {
 				<br />
 				that is Kenya
 			</h1>
-			<a href="booking">Book a tour</a>
+			<Link to={'/booking'}>Book a tour</Link>
 		</div>
 	);
 }

@@ -20,13 +20,10 @@ function Navbar() {
 					Horizon Tours and Travel
 				</a>
 				<div className="navLinks">
-					{/* <a href="/">Home</a> */}
 					<Link to={'/'}>Home</Link>
 					<a href="/#popular">Popular destinations</a>
-					{/* <a href="/contact">Contact</a> */}
 					<Link to={'/contact'}>Contact</Link>
 					{/* <a href="/login">Login</a> */}
-					{/* <a href="/booking">Book a tour</a> */}
 					<Link to={'/booking'}>Book a tour</Link>
 				</div>
 			</nav>
