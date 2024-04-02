@@ -39,3 +39,57 @@
 		}
 	}
 }
+
+#popular {
+	display: flex;
+	flex-direction: column;
+
+	h1 {
+		margin: 1.25rem auto;
+		text-align: center;
+	}
+}
+
+.destinationDisplay {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 5rem 10rem;
+	margin: 0 auto 1.25rem;
+
+	.destination {
+		background-color: $secondary-font-color;
+		border-top: $primary-bg-color 0.125rem solid;
+		border-left: $primary-bg-color 0.125rem solid;
+		border-top-left-radius: 1.25rem;
+		border-bottom-right-radius: 1.25rem;
+		display: flex;
+		flex-direction: column;
+		filter: drop-shadow(0.625rem 0.625rem 0.25rem rgba(0, 0, 0, 0.25));
+		width: 30rem;
+
+		img {
+			border-top-left-radius: 1.25rem;
+			border-bottom-right-radius: 1.25rem;
+			object-position: center;
+			object-fit: cover;
+			width: 30rem;
+		}
+
+		.destinationInfo {
+			display: flex;
+			flex-direction: column;
+			padding: 0 0.25rem;
+
+			.name {
+				font-size: 1.25rem;
+				font-weight: bold;
+				text-decoration: underline;
+			}
+
+			.location,
+			.price {
+				font-weight: bold;
+			}
+		}
+	}
+}

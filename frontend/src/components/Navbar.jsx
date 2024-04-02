@@ -20,9 +20,9 @@ function Navbar() {
 				</a>
 				<div className="navLinks">
 					<a href="/">Home</a>
-					<a href="/#popular">Popular destination</a>
+					<a href="/#popular">Popular destinations</a>
 					<a href="/contact">Contact</a>
-					<a href="/login">Login</a>
+					{/* <a href="/login">Login</a> */}
 					<a href="/booking">Book a tour</a>
 				</div>
 			</nav>

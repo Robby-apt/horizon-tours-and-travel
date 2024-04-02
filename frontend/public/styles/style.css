@@ -119,6 +119,56 @@ footer p {
   color: #000;
 }
 
+#popular {
+  display: flex;
+  flex-direction: column;
+}
+#popular h1 {
+  margin: 1.25rem auto;
+  text-align: center;
+}
+
+.destinationDisplay {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 5rem 10rem;
+  margin: 0 auto 1.25rem;
+}
+.destinationDisplay .destination {
+  background-color: #fff;
+  border-top: #2d3b46 0.125rem solid;
+  border-left: #2d3b46 0.125rem solid;
+  border-top-left-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  filter: drop-shadow(0.625rem 0.625rem 0.25rem rgba(0, 0, 0, 0.25));
+  width: 30rem;
+}
+.destinationDisplay .destination img {
+  border-top-left-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 30rem;
+}
+.destinationDisplay .destination .destinationInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.25rem;
+}
+.destinationDisplay .destination .destinationInfo .name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.destinationDisplay .destination .destinationInfo .location,
+.destinationDisplay .destination .destinationInfo .price {
+  font-weight: bold;
+}
+
 #contact {
   display: flex;
   flex-direction: column;
@@ -251,6 +301,57 @@ form button:hover {
   border: 0.125rem solid #000;
   color: #fff;
   cursor: pointer;
+}
+
+#booking {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+#booking nav {
+  color: #000;
+}
+#booking nav a:last-child {
+  border: #000 0.125rem solid;
+  border-radius: 0.3125rem;
+  padding: 0.125rem 0.25rem;
+}
+#booking nav a:last-child:hover {
+  background-color: #000;
+  color: #fff;
+}
+#booking .bookingForm {
+  display: flex;
+  margin: auto;
+}
+#booking .bookingForm form {
+  margin: auto;
+  width: 90vw;
+}
+#booking .bookingForm form .field {
+  display: flex !important;
+  flex-direction: row !important;
+}
+#booking .bookingForm form .field div {
+  display: flex;
+  width: 42vw;
+}
+#booking .bookingForm form .field div:first-child {
+  margin-right: auto !important;
+}
+#booking .bookingForm form .conclusion {
+  display: flex;
+  flex-direction: column;
+}
+#booking .bookingForm form .conclusion p {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+#booking .bookingForm form .conclusion p span {
+  font-weight: bold;
+}
+#booking .bookingForm form .conclusion button {
+  font-size: 1.25rem;
 }
 
 #login {
