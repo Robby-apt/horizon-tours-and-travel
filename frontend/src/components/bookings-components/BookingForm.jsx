@@ -34,7 +34,7 @@ function BookingForm() {
 					body: dataBody,
 				});
 				// get status code
-				if (res.status == 200) {
+				if (res.status === 200) {
 					alert(`The message has been sent successfully`);
 					setBookingInfo({
 						fName: ``,
