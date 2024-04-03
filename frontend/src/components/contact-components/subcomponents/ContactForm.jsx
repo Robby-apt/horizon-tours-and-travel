@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+// import { send } from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 const validator = require('email-validator');
 
 function ContactForm() {
+	const contactForm = useRef();
 	const [contactInfo, setContactInfo] = useState({
 		nameField: ``,
 		emailField: ``,
@@ -14,38 +17,53 @@ function ContactForm() {
 		setContactInfo((prev) => {
 			return { ...prev, [name]: value };
 		});
+		// console.log(contactInfo);
 	}
 
-	async function handleSubmit(event) {
+	// async
+	function handleSubmit(event) {
 		event.preventDefault();
 
 		if (validator.validate(contactInfo.emailField)) {
-			let dataBody = JSON.stringify(contactInfo);
+			// let dataBody = JSON.stringify(contactInfo);
+
+			// try {
+			// 	const url = process.env.REACT_APP_BACKEND;
+			// 	let res = await fetch(url, {
+			// 		method: 'POST',
+			// 		headers: { 'content-type': 'application/json' },
+			// 		body: dataBody,
+			// 	});
+			// 	// get status code
+			// 	if (res.status === 200) {
+			// 		alert(`The message has been sent successfully`);
+			// 		setContactInfo({
+			// 			nameField: ``,
+			// 			emailField: ``,
+			// 			subjectField: ``,
+			// 			messageField: ``,
+			// 		});
+			// 		console.log(contactInfo);
+			// 	} else {
+			// 		alert(
+			// 			`Sorry, something went wrong when sending the message`
+			// 		);
+			// 	}
+			// } catch (err) {
+			// 	console.log(err);
+			// }
 
 			try {
-				const url = process.env.REACT_APP_BACKEND;
-				let res = await fetch(url, {
-					method: 'POST',
-					headers: { 'content-type': 'application/json' },
-					body: dataBody,
-				});
-				// get status code
-				if (res.status === 200) {
-					alert(`The message has been sent successfully`);
-					setContactInfo({
-						name: ``,
-						email: ``,
-						subject: ``,
-						message: ``,
-					});
-					console.log(contactInfo);
-				} else {
-					alert(
-						`Sorry, something went wrong when sending the message`
-					);
-				}
+				emailjs.sendForm(
+					process.env.REACT_APP_SERVICE_ID,
+					process.env.REACT_APP_CONTACT_TEMPLATE,
+					contactForm.current,
+					{ publicKey: process.env.REACT_APP_CONTACT_KEY }
+				);
+				alert(`The message has been sent successfully`);
 			} catch (err) {
 				console.log(err);
+				alert(`Sorry, something went wrong when sending the message`);
 			}
 		} else {
 			alert(`Kindly enter a valid email`);
@@ -54,7 +72,7 @@ function ContactForm() {
 
 	return (
 		<div className="contactForm">
-			<form onSubmit={handleSubmit}>
+			<form ref={contactForm} onSubmit={handleSubmit}>
 				<div className="nameInput">
 					<label htmlFor="nameField">Name:</label>
 					<input
@@ -63,7 +81,7 @@ function ContactForm() {
 						name="nameField"
 						value={contactInfo.nameField}
 						onChange={handleChange}
-						minlength="2"
+						minLength="2"
 						required
 					/>
 				</div>
@@ -86,7 +104,7 @@ function ContactForm() {
 						name="subjectField"
 						value={contactInfo.subjectField}
 						onChange={handleChange}
-						minlength="5"
+						minLength="5"
 						required
 					/>
 				</div>
@@ -99,7 +117,7 @@ function ContactForm() {
 						rows="10"
 						value={contactInfo.messageField}
 						onChange={handleChange}
-						minlength="5"
+						minLength="5"
 						required
 					/>
 				</div>

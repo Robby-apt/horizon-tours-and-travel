@@ -11,7 +11,7 @@ function Navbar() {
 				</div>
 
 				<div className="navPhone">
-					<i class="fa-solid fa-phone" />
+					<i className="fa-solid fa-phone" />
 					<p>0748629493</p>
 				</div>
 			</div>

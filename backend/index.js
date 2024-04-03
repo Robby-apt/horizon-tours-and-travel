@@ -29,22 +29,23 @@ const transporter = nodemailer.createTransport({
 
 // get form data from contact form
 app.post('/contact', (req, res) => {
-	const { name, email, subject, message } = req.body;
+	const { nameField, emailField, subjectField, messageField } = req.body;
 
-	const mailOptions = {
-		from: process.env.SENDER,
-		to: process.env.RECEIVER,
-		subject: subject,
-		html: `<h1>Message from: ${name}</h1>
-        <h2>Sender's email: ${email}</h2>
-        <p>${message}</p>`,
-	};
+	// const mailOptions = {
+	// 	from: process.env.SENDER,
+	// 	to: process.env.RECEIVER,
+	// 	subject: subjectField,
+	// 	html: `<h1>Message from: ${nameField}</h1>
+	//     <h2>Sender's email: ${emailField}</h2>
+	//     <p>${messageField}</p>`,
+	// };
 
-	transporter.sendMail(mailOptions, (err, info) => {
-		let output = err || info.response;
-		console.log(output);
-		res.send(output);
-	});
+	// transporter.sendMail(mailOptions, (err, info) => {
+	// 	let output = err || info.response;
+	// 	console.log(output);
+	// 	res.send(output);
+	// });
+	console.log(req.body);
 });
 
 // get form data from booking form
@@ -62,23 +63,24 @@ app.post('/booking', (req, res) => {
 
 	let name = `${fName} ${lName}`;
 
-	const mailOptions = {
-		from: process.env.SENDER,
-		to: process.env.RECEIVER,
-		subject: `Client booking a tour`,
-		html: `<h1>Message from: ${name}</h1>
-        <h2>Sender's email: ${email}</h2>
-        <h2>Sender's phone: ${phone}</h2>
-        <p>Booking a tour to <strong>${destination}</strong> for <strong>${numberOfPeople}</strong> people
-         starting from <strong>${startDate}</strong></p>
-         <p>This will amount to a total of <strong>${totalFee}</strong></p>`,
-	};
+	// const mailOptions = {
+	// 	from: process.env.SENDER,
+	// 	to: process.env.RECEIVER,
+	// 	subject: `Client booking a tour`,
+	// 	html: `<h1>Message from: ${name}</h1>
+	//     <h2>Sender's email: ${email}</h2>
+	//     <h2>Sender's phone: ${phone}</h2>
+	//     <p>Booking a tour to <strong>${destination}</strong> for <strong>${numberOfPeople}</strong> people
+	//      starting from <strong>${startDate}</strong></p>
+	//      <p>This will amount to a total of <strong>${totalFee}</strong></p>`,
+	// };
 
-	transporter.sendMail(mailOptions, (err, info) => {
-		let output = err || info.response;
-		console.log(output);
-		res.send(output);
-	});
+	// transporter.sendMail(mailOptions, (err, info) => {
+	// 	let output = err || info.response;
+	// 	console.log(output);
+	// 	res.send(output);
+	// });
+	console.log(req.body);
 });
 
 app.listen(port, () => {

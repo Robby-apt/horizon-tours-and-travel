@@ -20,7 +20,7 @@ function ContactMedia() {
 					</div>
 
 					<div className="contactPhone">
-						<i class="fa-solid fa-phone" />
+						<i className="fa-solid fa-phone" />
 						<p>0748629493</p>
 					</div>
 				</div>

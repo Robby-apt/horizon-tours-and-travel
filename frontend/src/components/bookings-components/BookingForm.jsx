@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+// import { send } from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 const validator = require('email-validator');
 
 function BookingForm() {
+	const bookingForm = useRef();
 	const [bookingInfo, setBookingInfo] = useState({
 		fName: ``,
 		lName: ``,
@@ -24,36 +27,49 @@ function BookingForm() {
 		event.preventDefault();
 
 		if (validator.validate(bookingInfo.email)) {
-			let dataBody = JSON.stringify(bookingInfo);
+			// let dataBody = JSON.stringify(bookingInfo);
+
+			// try {
+			// 	const url = process.env.REACT_APP_BACKEND;
+			// 	let res = await fetch(url, {
+			// 		method: 'POST',
+			// 		headers: { 'content-type': 'application/json' },
+			// 		body: dataBody,
+			// 	});
+			// 	// get status code
+			// 	if (res.status === 200) {
+			// 		alert(`The message has been sent successfully`);
+			// 		setBookingInfo({
+			// 			fName: ``,
+			// 			lName: ``,
+			// 			phone: ``,
+			// 			email: ``,
+			// 			destination: ``,
+			// 			startDate: ``,
+			// 			numberOfPeople: ``,
+			// 			totalFee: ``,
+			// 		});
+			// 		console.log(bookingInfo);
+			// 	} else {
+			// 		alert(
+			// 			`Sorry, something went wrong when sending the message`
+			// 		);
+			// 	}
+			// } catch (err) {
+			// 	console.log(err);
+			// }
 
 			try {
-				const url = process.env.REACT_APP_BACKEND;
-				let res = await fetch(url, {
-					method: 'POST',
-					headers: { 'content-type': 'application/json' },
-					body: dataBody,
-				});
-				// get status code
-				if (res.status === 200) {
-					alert(`The message has been sent successfully`);
-					setBookingInfo({
-						fName: ``,
-						lName: ``,
-						phone: ``,
-						email: ``,
-						destination: ``,
-						startDate: ``,
-						numberOfPeople: ``,
-						totalFee: ``,
-					});
-					console.log(bookingInfo);
-				} else {
-					alert(
-						`Sorry, something went wrong when sending the message`
-					);
-				}
+				emailjs.sendForm(
+					process.env.REACT_APP_SERVICE_ID,
+					process.env.REACT_APP_BOOKING_TEMPLATE,
+					bookingForm.current,
+					{ publicKey: process.env.REACT_APP_CONTACT_KEY }
+				);
+				alert(`The message has been sent successfully`);
 			} catch (err) {
 				console.log(err);
+				alert(`Sorry, something went wrong when sending the message`);
 			}
 		} else {
 			alert(`Kindly enter a valid email`);
@@ -62,7 +78,7 @@ function BookingForm() {
 
 	return (
 		<div className="bookingForm">
-			<form onSubmit={handleSubmit}>
+			<form ref={bookingForm} onSubmit={handleSubmit}>
 				<div className="nameField field">
 					<div className="fNameField">
 						<label htmlFor="fName">First Name:</label>
