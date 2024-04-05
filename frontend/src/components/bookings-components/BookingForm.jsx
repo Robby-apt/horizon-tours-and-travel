@@ -15,6 +15,19 @@ function BookingForm() {
 		totalFee: ``,
 	});
 
+	function clearForm() {
+		setContactInfo({
+			fName: ``,
+			lName: ``,
+			phone: ``,
+			email: ``,
+			destination: ``,
+			startDate: ``,
+			numberOfPeople: ``,
+			totalFee: ``,
+		});
+	}
+
 	function handleChange(event) {
 		let { name, value } = event.target;
 		setBookingInfo((prev) => {
@@ -35,6 +48,7 @@ function BookingForm() {
 					{ publicKey: process.env.REACT_APP_BOOKING_PUBLIC_KEY }
 				);
 				alert(`The message has been sent successfully`);
+				clearForm();
 			} catch (err) {
 				console.log(err);
 				alert(`Sorry, something went wrong when sending the message`);

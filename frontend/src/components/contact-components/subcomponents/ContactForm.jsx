@@ -11,6 +11,15 @@ function ContactForm() {
 		messageField: ``,
 	});
 
+	function clearForm() {
+		setContactInfo({
+			nameField: ``,
+			emailField: ``,
+			subjectField: ``,
+			messageField: ``,
+		});
+	}
+
 	function handleChange(event) {
 		let { name, value } = event.target;
 		setContactInfo((prev) => {
@@ -32,6 +41,7 @@ function ContactForm() {
 					{ publicKey: process.env.REACT_APP_CONTACT_PUBLIC_KEY }
 				);
 				alert(`The message has been sent successfully`);
+				clearForm();
 			} catch (err) {
 				console.log(err);
 				alert(`Sorry, something went wrong when sending the message`);
