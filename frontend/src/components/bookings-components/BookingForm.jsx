@@ -16,7 +16,7 @@ function BookingForm() {
 	});
 
 	function clearForm() {
-		setContactInfo({
+		setBookingInfo({
 			fName: ``,
 			lName: ``,
 			phone: ``,
