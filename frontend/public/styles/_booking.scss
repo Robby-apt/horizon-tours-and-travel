@@ -25,12 +25,19 @@
 		margin: auto;
 
 		form {
+			background-color: $secondary-font-color;
+			border-top: $primary-bg-color 0.125rem solid;
+			border-left: $primary-bg-color 0.125rem solid;
+			border-top-left-radius: 1.25rem;
+			border-bottom-right-radius: 1.25rem;
+			filter: drop-shadow(0.625rem 0.625rem 0.25rem rgba(0, 0, 0, 0.25));
 			margin: auto;
+			padding: 0.625rem;
 			width: 90vw;
 
 			.field {
-				display: flex !important;
-				flex-direction: row !important;
+				display: flex;
+				flex-direction: row;
 
 				div {
 					display: flex;

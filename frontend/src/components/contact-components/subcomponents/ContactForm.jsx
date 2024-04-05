@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-// import { send } from 'emailjs-com';
 import emailjs from '@emailjs/browser';
 const validator = require('email-validator');
 
@@ -25,40 +24,12 @@ function ContactForm() {
 		event.preventDefault();
 
 		if (validator.validate(contactInfo.emailField)) {
-			// let dataBody = JSON.stringify(contactInfo);
-
-			// try {
-			// 	const url = process.env.REACT_APP_BACKEND;
-			// 	let res = await fetch(url, {
-			// 		method: 'POST',
-			// 		headers: { 'content-type': 'application/json' },
-			// 		body: dataBody,
-			// 	});
-			// 	// get status code
-			// 	if (res.status === 200) {
-			// 		alert(`The message has been sent successfully`);
-			// 		setContactInfo({
-			// 			nameField: ``,
-			// 			emailField: ``,
-			// 			subjectField: ``,
-			// 			messageField: ``,
-			// 		});
-			// 		console.log(contactInfo);
-			// 	} else {
-			// 		alert(
-			// 			`Sorry, something went wrong when sending the message`
-			// 		);
-			// 	}
-			// } catch (err) {
-			// 	console.log(err);
-			// }
-
 			try {
 				emailjs.sendForm(
-					process.env.REACT_APP_SERVICE_ID,
+					process.env.REACT_APP_CONTACT_ID,
 					process.env.REACT_APP_CONTACT_TEMPLATE,
 					contactForm.current,
-					{ publicKey: process.env.REACT_APP_CONTACT_KEY }
+					{ publicKey: process.env.REACT_APP_CONTACT_PUBLIC_KEY }
 				);
 				alert(`The message has been sent successfully`);
 			} catch (err) {

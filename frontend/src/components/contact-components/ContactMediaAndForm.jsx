@@ -1,6 +1,6 @@
 import React from 'react';
-import ContactMedia from './ContactMedia';
-import ContactForm from './ContactForm';
+import ContactMedia from './subcomponents/ContactMedia';
+import ContactForm from './subcomponents/ContactForm';
 
 function ContactMediaAndForm() {
 	return (

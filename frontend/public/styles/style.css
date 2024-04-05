@@ -41,6 +41,7 @@ a {
   color: #fff;
   display: flex;
   justify-content: space-between;
+  position: relative;
   width: 90%;
   margin: 0.25rem auto 0;
 }
@@ -48,7 +49,11 @@ a {
   font-size: 1.5rem;
   font-weight: bold;
 }
+.navSection nav .navIcons {
+  display: none;
+}
 .navSection nav .navLinks {
+  display: flex;
   margin: auto 0 auto auto;
 }
 .navSection nav .navLinks a {
@@ -66,6 +71,41 @@ a {
   padding: 0.125rem 0.25rem;
 }
 .navSection nav .navLinks a:last-child:hover {
+  background-color: #fff;
+  color: #000;
+}
+.navSection nav .navLinksResponsive {
+  background-color: #2d3b46;
+  border-bottom-left-radius: 0.3125rem;
+  border-bottom-right-radius: 0.3125rem;
+  color: #fff !important;
+  color: #fff !important;
+  display: none;
+  filter: drop-shadow(0.625rem 0.625rem 0.25rem rgba(0, 0, 0, 0.25));
+  flex-direction: column;
+  margin: auto 0 auto auto;
+  min-width: 10.5rem;
+  padding: 0 auto 0.3125rem auto;
+  top: 100%;
+  left: calc(100% - 10.5rem);
+  position: absolute;
+}
+.navSection nav .navLinksResponsive a {
+  font-size: 1.125rem;
+}
+.navSection nav .navLinksResponsive a:not(:first-child) {
+  margin-top: 1.25rem;
+}
+.navSection nav .navLinksResponsive a:not(:last-child):hover {
+  text-decoration: underline;
+}
+.navSection nav .navLinksResponsive a:last-child {
+  border: #fff 0.125rem solid;
+  border-radius: 0.3125rem;
+  padding: 0.125rem 0.25rem;
+  text-align: center;
+}
+.navSection nav .navLinksResponsive a:last-child:hover {
   background-color: #fff;
   color: #000;
 }
@@ -152,7 +192,7 @@ footer p {
      object-position: center;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 30rem;
+  width: 100%;
 }
 .destinationDisplay .destination .destinationInfo {
   display: flex;
@@ -325,12 +365,19 @@ form button:hover {
   margin: auto;
 }
 #booking .bookingForm form {
+  background-color: #fff;
+  border-top: #2d3b46 0.125rem solid;
+  border-left: #2d3b46 0.125rem solid;
+  border-top-left-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+  filter: drop-shadow(0.625rem 0.625rem 0.25rem rgba(0, 0, 0, 0.25));
   margin: auto;
+  padding: 0.625rem;
   width: 90vw;
 }
 #booking .bookingForm form .field {
-  display: flex !important;
-  flex-direction: row !important;
+  display: flex;
+  flex-direction: row;
 }
 #booking .bookingForm form .field div {
   display: flex;
@@ -354,20 +401,56 @@ form button:hover {
   font-size: 1.25rem;
 }
 
-#login {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+@media (max-width: 850px) {
+  nav .navIcons {
+    display: flex !important;
+  }
+  nav .navLinks {
+    display: none !important;
+  }
+  nav .navLinksResponsive {
+    display: flex !important;
+  }
+  #heroText h1 {
+    font-size: 2.5rem;
+  }
+  #heroText a {
+    font-size: 1.5rem;
+    margin-bottom: 0.3125rem;
+  }
+  .destinationDisplay .destination {
+    width: 20rem;
+  }
 }
-#login nav {
-  color: #000;
+@media (max-width: 1160px) {
+  .destinationDisplay {
+    display: flex;
+    flex-direction: column;
+  }
+  .bookingForm form {
+    margin: 2rem auto !important;
+  }
+  .bookingForm form .field {
+    flex-direction: column !important;
+  }
+  .bookingForm form .field div {
+    width: 100% !important;
+  }
 }
-#login nav a:last-child {
-  border: #000 0.125rem solid;
-  border-radius: 0.3125rem;
-  padding: 0.125rem 0.25rem;
-}
-#login nav a:last-child:hover {
-  background-color: #000;
-  color: #fff;
+@media (max-width: 1450px) {
+  .contactLinksAndForm {
+    flex-direction: column-reverse;
+    margin: 2rem auto;
+  }
+  .contactLinksAndForm .contactMedia {
+    border-radius: 0 0 1.25rem 1.25rem;
+    width: 100%;
+  }
+  .contactLinksAndForm .contactMedia .mediaContainer {
+    margin: 2rem auto;
+  }
+  .contactLinksAndForm .contactForm {
+    border-radius: 1.25rem 1.25rem 0 0;
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import ContactMediaAndForm from '../components/contact-components/subcomponents/ContactMediaAndForm';
+import ContactMediaAndForm from '../components/contact-components/ContactMediaAndForm';
 
 function Contact() {
 	return (

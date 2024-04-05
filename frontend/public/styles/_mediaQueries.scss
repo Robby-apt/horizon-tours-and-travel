@@ -1,0 +1,77 @@
+// first breakpoint
+@media (max-width: 850px) {
+	nav {
+		.navIcons {
+			display: flex !important;
+		}
+
+		.navLinks {
+			display: none !important;
+		}
+
+		.navLinksResponsive {
+			display: flex !important;
+		}
+	}
+
+	#heroText {
+		h1 {
+			font-size: 2.5rem;
+		}
+
+		a {
+			font-size: 1.5rem;
+			margin-bottom: 0.3125rem;
+		}
+	}
+
+	.destinationDisplay {
+		.destination {
+			width: 20rem;
+		}
+	}
+}
+
+// second breakpoint
+@media (max-width: 1160px) {
+	.destinationDisplay {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.bookingForm {
+		form {
+			margin: 2rem auto !important;
+
+			.field {
+				flex-direction: column !important;
+
+				div {
+					width: 100% !important;
+				}
+			}
+		}
+	}
+}
+
+// third breakpoint
+@media (max-width: 1450px) {
+	.contactLinksAndForm {
+		flex-direction: column-reverse;
+		margin: 2rem auto;
+
+		.contactMedia {
+			border-radius: 0 0 1.25rem 1.25rem;
+			width: 100%;
+
+			.mediaContainer {
+				margin: 2rem auto;
+			}
+		}
+
+		.contactForm {
+			border-radius: 1.25rem 1.25rem 0 0;
+			width: 100%;
+		}
+	}
+}

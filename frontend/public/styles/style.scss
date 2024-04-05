@@ -57,6 +57,7 @@ a {
 		color: $secondary-font-color;
 		display: flex;
 		justify-content: space-between;
+		position: relative;
 		width: 90%;
 
 		margin: 0.25rem auto 0;
@@ -66,7 +67,12 @@ a {
 			font-weight: bold;
 		}
 
+		.navIcons {
+			display: none;
+		}
+
 		.navLinks {
+			display: flex;
 			margin: auto 0 auto auto;
 
 			a {
@@ -86,6 +92,49 @@ a {
 					border: $secondary-font-color 0.125rem solid;
 					border-radius: 0.3125rem;
 					padding: 0.125rem 0.25rem;
+
+					&:hover {
+						background-color: $secondary-font-color;
+						color: $primary-font-color;
+					}
+				}
+			}
+		}
+
+		.navLinksResponsive {
+			background-color: $primary-bg-color;
+			border-bottom-left-radius: 0.3125rem;
+			border-bottom-right-radius: 0.3125rem;
+			color: $secondary-font-color !important;
+			color: $secondary-font-color !important;
+			display: none;
+			filter: drop-shadow(0.625rem 0.625rem 0.25rem rgba(0, 0, 0, 0.25));
+			flex-direction: column;
+			margin: auto 0 auto auto;
+			min-width: 10.5rem;
+			padding: 0 auto 0.3125rem auto;
+			top: 100%;
+			left: calc(100% - 10.5rem);
+			position: absolute;
+
+			a {
+				font-size: 1.125rem;
+
+				&:not(:first-child) {
+					margin-top: 1.25rem;
+				}
+
+				&:not(:last-child) {
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+
+				&:last-child {
+					border: $secondary-font-color 0.125rem solid;
+					border-radius: 0.3125rem;
+					padding: 0.125rem 0.25rem;
+					text-align: center;
 
 					&:hover {
 						background-color: $secondary-font-color;
@@ -116,5 +165,5 @@ footer {
 @import './contact';
 // booking page
 @import './booking';
-// login page
-@import './login';
+// media queries
+@import './mediaQueries';
