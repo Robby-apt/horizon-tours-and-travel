@@ -186,8 +186,7 @@ footer p {
   width: 30rem;
 }
 .destinationDisplay .destination img {
-  border-top-left-radius: 1.25rem;
-  border-bottom-right-radius: 1.25rem;
+  border-top-left-radius: 1.125rem;
   -o-object-position: center;
      object-position: center;
   -o-object-fit: cover;
