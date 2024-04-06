@@ -116,6 +116,7 @@ a {
 			top: 100%;
 			left: calc(100% - 10.5rem);
 			position: absolute;
+			z-index: 10;
 
 			a {
 				font-size: 1.125rem;

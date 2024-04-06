@@ -1,5 +1,21 @@
 // first breakpoint
 @media (max-width: 850px) {
+	.navSection {
+		.info {
+			div {
+				i {
+					font-size: 0.75rem;
+					margin: auto 0.75rem auto 0;
+				}
+
+				p {
+					font-size: 0.75rem;
+					margin: auto 0;
+				}
+			}
+		}
+	}
+
 	nav {
 		.navIcons {
 			display: flex !important;
@@ -29,6 +45,10 @@
 		.destination {
 			width: 20rem;
 		}
+	}
+
+	.contactLinksAndForm {
+		width: 95vw;
 	}
 }
 

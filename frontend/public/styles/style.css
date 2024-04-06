@@ -89,6 +89,7 @@ a {
   top: 100%;
   left: calc(100% - 10.5rem);
   position: absolute;
+  z-index: 10;
 }
 .navSection nav .navLinksResponsive a {
   font-size: 1.125rem;
@@ -401,6 +402,14 @@ form button:hover {
 }
 
 @media (max-width: 850px) {
+  .navSection .info div i {
+    font-size: 0.75rem;
+    margin: auto 0.75rem auto 0;
+  }
+  .navSection .info div p {
+    font-size: 0.75rem;
+    margin: auto 0;
+  }
   nav .navIcons {
     display: flex !important;
   }
@@ -419,6 +428,9 @@ form button:hover {
   }
   .destinationDisplay .destination {
     width: 20rem;
+  }
+  .contactLinksAndForm {
+    width: 95vw;
   }
 }
 @media (max-width: 1160px) {
